@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the Document</title>
+  </head>
+  <body>
+    <script>
+	const queryString = window.location.search;
+	console.log(queryString);
+      const urlParams = new URLSearchParams(queryString);
+      localStorage.setItem("utm_source", urlParams.get('utm_source'));
+      localStorage.setItem("utm_medium", urlParams.get('utm_medium'));
+      localStorage.setItem("utm_content", urlParams.get('utm_content'));
+      localStorage.setItem("utm_campaign", urlParams.get('utm_campaign'));
+      var storedVariable=''
+      if(localStorage.getItem('utm_source') != null){
+        storedVariable += localStorage.getItem('utm_source')+", ";
+      }
+
+      if(localStorage.getItem('utm_medium') != null){
+        storedVariable += localStorage.getItem('utm_medium')+", ";
+      }
+
+      if(localStorage.getItem('utm_content') != null){
+        storedVariable += localStorage.getItem('utm_content')+", ";
+      }
+
+      if(localStorage.getItem('utm_campaign') != null){
+        storedVariable += localStorage.getItem('utm_campaign');
+      }
+
+      alert(storedVariable);
+
+    </script>
+  </body>
+</html>
