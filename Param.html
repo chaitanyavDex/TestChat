@@ -8,6 +8,7 @@
 	const queryString = window.location.search;
 	console.log(queryString);
       const urlParams = new URLSearchParams(queryString);
+	    alert(urlParams.get('utm_source'));
       localStorage.setItem("utm_source", urlParams.get('utm_source'));
       localStorage.setItem("utm_medium", urlParams.get('utm_medium'));
       localStorage.setItem("utm_content", urlParams.get('utm_content'));
