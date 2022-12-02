@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Title of the Document</title>
+</head>
+
+<body>
+  <script>
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    if (urlParams.get('utm_source') != null) {
+      localStorage.setItem("utm_source", urlParams.get('utm_source'));
+    }
+
+    if (urlParams.get('utm_campaign') != null) {
+      localStorage.setItem("utm_campaign", urlParams.get('utm_campaign'));
+    }
+
+    if (urlParams.get('utm_medium') != null) {
+      localStorage.setItem("utm_medium", urlParams.get('utm_medium'));
+    }
+
+    if (urlParams.get('utm_content') != null) {
+      localStorage.setItem("utm_content", urlParams.get('utm_content'));
+    }
+
+    var storedVariable = ''
+    if (localStorage.getItem('utm_source') != null) {
+      storedVariable += localStorage.getItem('utm_source') + ", ";
+    }
+
+    if (localStorage.getItem('utm_medium') != null) {
+      storedVariable += localStorage.getItem('utm_medium') + ", ";
+    }
+
+    if (localStorage.getItem('utm_content') != null) {
+      storedVariable += localStorage.getItem('utm_content') + ", ";
+    }
+
+    if (localStorage.getItem('utm_campaign') != null) {
+      storedVariable += localStorage.getItem('utm_campaign');
+    }
+
+    alert(storedVariable);
+
+  </script>
+</body>
+<a
+  href="Local_Storage_HTML.html?utm_source=Twitter123&utm_medium=cpc&utm_campaign=ts-aipm-linkedin-image-ad-marketing-skills-&utm_content=digital-marketing-transformed-by-ai">Next</a>
+<br>
+<a href="Local_Storage_HTML.html">Naviagte to Empty Page</a>
+<br>
+<a
+  href="Local_Storage_HTML.html?utm_source=LinkedIn&utm_medium=cpcTestData&utm_campaign=Linkedin Campaign-&utm_content=Linkedin -digital-marketing">Navigate
+  to Page with Different Url Parameters</a>
+<br>
+
+</html>
